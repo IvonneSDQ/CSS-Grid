@@ -1,0 +1,37 @@
+.container{
+    background-color: #fcffe1;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 150px;
+    gap: 20px;
+}
+
+
+
+.item{
+    background-color: #72cb10;
+    font-size: 4rem;
+    display: grid;
+    justify-items: end;
+    align-items: end;
+}
+
+.item:nth-child(1),:nth-child(4){
+    background-color: greenyellow;
+}
+
+.item:nth-child(3),:nth-child(6){
+    background-color: #419f00;
+}
+
+span{
+    color: #fff;
+    font-weight: bold;
+    bottom: 0;
+    background-color: #337900;
+    justify-items: end;
+    align-items: end;
+    width: 50px;
+    text-align: center;
+}

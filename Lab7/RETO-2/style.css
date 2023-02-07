@@ -1,0 +1,33 @@
+html{
+    background-color: white;
+}
+.contenedor {
+    border: 5px solid #e1bee7;
+    background-color: #085606;
+    display: grid;
+    grid-template-rows: 150px 150px;
+    grid-auto-columns: 150px;
+    grid-auto-flow: column;
+    gap: 20px;
+    place-content: center;
+    height: 320px;
+    width: 320px;
+    }
+    
+    .item {
+    display: grid;
+    justify-items: end;
+    align-items: end;
+    background-color: #72cb10
+    }
+    
+    .item span {
+    width: 50px;
+    height: 70px;
+    font-size: 30px;
+    background-color: #377f03;
+    color: white;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    }
