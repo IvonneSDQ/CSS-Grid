@@ -1,0 +1,176 @@
+/* GRID en CSS */
+
+/* 
+    https://css-tricks.com/wp-content/uploads/2018/04/flexbox-to-grid.png
+
+    https://images.velog.io/images/edie_ko/post/77920061-ee2f-4cb4-9f1f-3bec9615407f/cssgrid.jpg
+
+
+*/
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: papayawhip;
+}
+
+
+h1 {
+    background-color: teal;
+    text-align: center;
+    color: white;
+    padding: 1.5rem;
+}
+
+
+
+
+
+/* Siempre que se quiera trabajar con CSS GRID se debe tener un contenedor  */
+
+
+.container {
+    width: 50%;
+    outline: 2px solid tomato;
+    margin: 20px auto;
+
+    
+    /* Con esta propiedad activamos GRID */
+    display: grid; 
+
+
+    /* Con esta propiedad se activa la creación de columnas */
+    grid-template-columns: repeat(4,1fr);
+    /* Con esta propiedad se activa la creación de filas */
+    grid-template-rows: auto;
+    /* Con esta propiedad se activa la separación de los grid-items */
+    gap: 20px 15px;
+
+
+    /* Con esta propiedad se activa la creación de las grid-areas */
+    /* Solo se permite establecer cuadrados o rectangulos */
+    grid-template-areas: 
+        "header header header header"
+        "main main . sidebar"
+        "footer footer footer footer";
+    
+    padding: .5em;
+}
+
+
+
+.item {
+    color: white;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 150px;    
+}
+
+
+.item-1{
+    background: darkcyan;
+    grid-area: header;
+    height: 150px;
+}
+
+
+.item-2{
+    background: violet;
+    grid-area: main;
+    height: 150px;
+}
+
+.item-3{
+    background: brown;
+    grid-area: sidebar;
+    height: 150px;
+}
+
+
+.item-4{
+    background: slateblue; 
+    grid-area: footer; 
+    height: 150px;
+}
+
+
+
+
+
+
+.container-img
+{
+    width: 50%;
+    outline: 2px solid blue;
+    margin: 20px auto;
+
+    /* Con esta propiedad activamos GRID */
+    display: grid; 
+
+    
+    /* Con esta propiedad se activa el shorthand
+        grid rows, grid columns.
+    */
+    grid-template: 
+        "header header header header" 1fr
+        "main main sidebar sidebar" 2fr
+        "footer footer footer footer" 250px /
+        1fr 1fr 1fr 1fr;
+    padding: .5em;
+}
+
+
+.item-5{
+    height: 300px;
+    background-image: url('./images/glass.jpg');
+    grid-area: header;
+    background-size: cover;
+    background-position: bottom;
+    
+}
+
+
+.item-6{
+    background-image: url('./images/pc.jpg');
+    grid-area: main;
+    background-size: cover;
+    background-position: left;
+    
+}
+
+.item-7{
+    background-image: url('./images/cup.jpg');
+    grid-area: sidebar;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+.item-8{
+    background-image: url('./images/cat.jpg');
+    grid-area: footer;
+    background-size: cover;
+    background-position: bottom;
+}
+
+
+
+@media (max-width: 500px) 
+{
+    .container {
+        width: 100%;
+
+        grid-template-areas: 
+        "header header header header"
+        "sidebar sidebar sidebar sidebar"
+        "main main main main"
+        "footer footer footer footer";
+    }
+}

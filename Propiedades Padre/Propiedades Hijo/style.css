@@ -1,0 +1,88 @@
+/* GRID en CSS */
+
+/* 
+    https://css-tricks.com/wp-content/uploads/2018/11/template-columns-rows-01.svg
+
+    https://css-tricks.com/wp-content/uploads/2018/11/template-column-rows-02.svg
+
+
+*/
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: papayawhip;
+}
+
+
+h1 {
+    background-color: teal;
+    text-align: center;
+    color: white;
+    padding: 1.5rem;
+}
+
+
+
+
+
+/* Siempre que se quiera trabajar con CSS GRID se debe tener un contenedor  */
+
+
+.container {
+    width: 50%;
+    outline: 2px solid tomato;
+    margin: 20px auto;
+
+    
+    /* Con esta propiedad activamos GRID */
+    display: grid; 
+    /* Con esta propiedad se activa la creación de columnas */
+    grid-template-columns: repeat(3,1fr);
+    /* Con esta propiedad se activa la creación de filas */
+    grid-template-rows: repeat(5,1fr);
+    /* Con esta propiedad se activa la separación de los grid-items */
+    /* row-gap: 20px; */
+    /* column-gap: 15px; */
+    gap: 20px 15px;
+
+
+
+}
+
+
+.item {
+    color: white;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 100px;    
+}
+
+
+.item-1{
+    background: darkcyan;
+}
+
+
+.item-2{
+    background: violet;
+}
+
+.item-3{
+    background: brown;
+}
+
+
+.item-4{
+    background: slateblue; 
+    /* linea-inicial   linea-final */
+    grid-column: 2 / 3;
+    /* linea-inicial   linea-final */
+    grid-row: 4 / 5;
+}
